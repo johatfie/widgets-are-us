@@ -1,0 +1,578 @@
+{
+	"info": {
+		"_postman_id": "33434025-af7c-42d9-813c-115301a7ba61",
+		"name": "Microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Config-server",
+			"item": [
+				{
+					"name": "Properties",
+					"item": [
+						{
+							"name": "Config-server application-default properties",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}:{{config-server-port}}/application/default",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{config-server-port}}",
+									"path": [
+										"application",
+										"default"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Config-server demo-default properties",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}:{{config-server-port}}/demo/default",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{config-server-port}}",
+									"path": [
+										"demo",
+										"default"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Config-server eureka-server-default properties",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}:{{config-server-port}}/eureka-server/dev",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{config-server-port}}",
+									"path": [
+										"eureka-server",
+										"dev"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Config-server gateway-server-default properties",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}:{{config-server-port}}/gateway-server/default",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{config-server-port}}",
+									"path": [
+										"gateway-server",
+										"default"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Config-server health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{config-server-port}}/actuator/health",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{config-server-port}}",
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Config-server monitor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{config-server-port}}/monitor",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{config-server-port}}",
+							"path": [
+								"monitor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Config-server actuator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{config-server-port}}/actuator/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{config-server-port}}",
+							"path": [
+								"actuator",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Config-server env",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{config-server-port}}/actuator/env",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{config-server-port}}",
+							"path": [
+								"actuator",
+								"env"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actuator/busrefresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}:{{config-server-port}}/actuator/busrefresh",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{config-server-port}}",
+							"path": [
+								"actuator",
+								"busrefresh"
+							]
+						},
+						"description": "Refresh configuration for all services"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Eureka-server",
+			"item": [
+				{
+					"name": "eureka-server actuator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{eureka-server-port}}/actuator/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{eureka-server-port}}",
+							"path": [
+								"actuator",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eureka-server actuator/health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{eureka-server-port}}/actuator/health",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{eureka-server-port}}",
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eureka-server actuator/env",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{eureka-server-port}}/actuator/env",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{eureka-server-port}}",
+							"path": [
+								"actuator",
+								"env"
+							]
+						},
+						"description": "actuator/env"
+					},
+					"response": []
+				},
+				{
+					"name": "eureka-server actuator/refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{eureka-server-port}}/actuator/refresh",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{eureka-server-port}}",
+							"path": [
+								"actuator",
+								"refresh"
+							]
+						},
+						"description": "actuator refresh endpoint   "
+					},
+					"response": []
+				},
+				{
+					"name": "eureka-server /actuator/restart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{eureka-server-port}}/actuator/restart",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{eureka-server-port}}",
+							"path": [
+								"actuator",
+								"restart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gateway-server",
+			"item": [
+				{
+					"name": "Customers-service",
+					"item": [
+						{
+							"name": "hello-world",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}:{{gateway-server-port}}/customers-service/hello-world",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{gateway-server-port}}",
+									"path": [
+										"customers-service",
+										"hello-world"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{gateway-server-port}}/actuator/health",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{gateway-server-port}}",
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actuator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{gateway-server-port}}/actuator/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{gateway-server-port}}",
+							"path": [
+								"actuator",
+								""
+							]
+						},
+						"description": "actuator/env"
+					},
+					"response": []
+				},
+				{
+					"name": "actuator/env",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{gateway-server-port}}/actuator/env",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{gateway-server-port}}",
+							"path": [
+								"actuator",
+								"env"
+							]
+						},
+						"description": "actuator/env"
+					},
+					"response": []
+				},
+				{
+					"name": "actuator/gateway/routes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}:{{gateway-server-port}}/actuator/gateway/routes",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{gateway-server-port}}",
+							"path": [
+								"actuator",
+								"gateway",
+								"routes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actuator/refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}:{{gateway-server-port}}/actuator/refresh",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{gateway-server-port}}",
+							"path": [
+								"actuator",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actuator/restart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}:{{gateway-server-port}}/actuator/restart",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{gateway-server-port}}",
+							"path": [
+								"actuator",
+								"restart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hello-world",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{gateway-server-port}}/hello-world",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{gateway-server-port}}",
+							"path": [
+								"hello-world"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customers-service",
+			"item": [
+				{
+					"name": "actuator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{customers-service-port}}/actuator/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{customers-service-port}}",
+							"path": [
+								"actuator",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actuator/health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{customers-service-port}}/actuator/health",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{customers-service-port}}",
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actuator/env",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{customers-service-port}}/actuator/env",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{customers-service-port}}",
+							"path": [
+								"actuator",
+								"env"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "hello-world",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{customers-service-port}}/hello-world",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{customers-service-port}}",
+							"path": [
+								"hello-world"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actuator/refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{customers-service-port}}/actuator/refresh",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{customers-service-port}}",
+							"path": [
+								"actuator",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actuator/restart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{customers-service-port}}/actuator/restart",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{customers-service-port}}",
+							"path": [
+								"actuator",
+								"restart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
