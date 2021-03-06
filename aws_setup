@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# docker tag widgets-are-us/authentication-service:0.0.1-SNAPSHOT [authentication-service-repositoryuri]:0.0.1-SNAPSHOT
+# docker tag widgets-are-us/organization-service:0.0.1-SNAPSHOT [organization-service-repositoryuri]:0.0.1-SNAPSHOT
+
+
+
+
+sudo curl -L https://github.com/docker/compose/releases/download/1.28.5/docker-compose-`uname -s`-`uname -m` | sudo tee /usr/local/bin/docker-compose > /dev/null
+
+docker login -u AWS -p `aws ecr get-login-password` https://326608040956.dkr.ecr.us-east-2.amazonaws.com
+
+
+docker   tag   micro/config-server:0.0.1-SNAPSHOT       326608040956.dkr.ecr.us-east-2.amazonaws.com/widgets-are-us/config-server:0.0.1-SNAPSHOT
+docker   tag   micro/gateway-server:0.0.1-SNAPSHOT      326608040956.dkr.ecr.us-east-2.amazonaws.com/widgets-are-us/gateway-server:0.0.1-SNAPSHOT
+docker   tag   micro/eureka-server:0.0.1-SNAPSHOT       326608040956.dkr.ecr.us-east-2.amazonaws.com/widgets-are-us/eureka-server:0.0.1-SNAPSHOT
+docker   tag   micro/customers-service:0.0.1-SNAPSHOT   326608040956.dkr.ecr.us-east-2.amazonaws.com/widgets-are-us/customers-service:0.0.1-SNAPSHOT
+
+docker   push  326608040956.dkr.ecr.us-east-2.amazonaws.com/widgets-are-us/config-server:0.0.1-SNAPSHOT
+docker   push  326608040956.dkr.ecr.us-east-2.amazonaws.com/widgets-are-us/gateway-server:0.0.1-SNAPSHOT
+docker   push  326608040956.dkr.ecr.us-east-2.amazonaws.com/widgets-are-us/eureka-server:0.0.1-SNAPSHOT
+docker   push  326608040956.dkr.ecr.us-east-2.amazonaws.com/widgets-are-us/customers-service:0.0.1-SNAPSHOT
+
