@@ -2,7 +2,7 @@
 
 ## A microservices demonstration project
 
-It includes these 5 projects, plus an ELK stack, Zipkin, and RabbitMQ.  I'm building it from scratch and handling
+It includes these 7 projects, plus an ELK stack, Zipkin, and RabbitMQ.  I'm building it from scratch and handling
 everything myself.  
 
 I've only been working on it for two weeks, but I've got most of the infrastructure running locally with docker-compose.
@@ -20,7 +20,7 @@ on an EC2 instance and have full CI/CD.
 - https://github.com/johatfie/hosts-file - Utility repo for easy switching between localhost, docker, and EKS in urls
 
 
-I would be remiss if I didn't cite my sources.  I learned a LOT from these five books.  
+I would be remiss if I didn't cite my sources.  I learned a LOT from reading these five books.  
 - https://www.manning.com/books/spring-microservices-in-action by John Carnell
 - https://www.manning.com/books/spring-microservices-in-action-second-edition by John Carnell, Illary Huaylupo Sánchez
 - https://www.manning.com/books/microservices-patterns by Chris Richardson
