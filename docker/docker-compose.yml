@@ -40,8 +40,8 @@ services:
 
   customers-service:
     image: micro/customers-service:0.0.1-SNAPSHOT
-    depends_on:
-      - gateway-server
+    #depends_on:
+      #- gateway-server
     ports:
       - "8073:8073"
     environment:
