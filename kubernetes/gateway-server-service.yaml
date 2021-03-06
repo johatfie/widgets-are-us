@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: C:\PROGRAMDATA\CHOCOLATEY\lib\kubernetes-kompose\tools\kompose.exe
+      convert -f docker-compose-eks.yml
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: gateway-server
+  name: gateway-server
+spec:
+  ports:
+  - name: "8072"
+    port: 8072
+    targetPort: 8072
+  selector:
+    io.kompose.service: gateway-server
+status:
+  loadBalancer: {}
