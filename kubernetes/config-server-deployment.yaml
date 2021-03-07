@@ -30,7 +30,7 @@ spec:
       - env:
         - name: SPRING_PROFILES_ACTIVE
           value: dev
-        image: micro/config-server:0.0.1-SNAPSHOT
+        image: widgets-are-us/config-server:0.0.1-SNAPSHOT
         imagePullPolicy: ""
         name: config-server
         ports:

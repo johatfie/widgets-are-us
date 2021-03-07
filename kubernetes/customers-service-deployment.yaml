@@ -30,7 +30,7 @@ spec:
       - env:
         - name: SPRING_PROFILES_ACTIVE
           value: dev
-        image: micro/customers-service:0.0.1-SNAPSHOT
+        image: widgets-are-us/customers-service:0.0.1-SNAPSHOT
         imagePullPolicy: ""
         name: customers-service
         ports:

@@ -30,7 +30,7 @@ spec:
       - env:
         - name: SPRING_PROFILES_ACTIVE
           value: dev
-        image: micro/eureka-server:0.0.1-SNAPSHOT
+        image: widgets-are-us/eureka-server:0.0.1-SNAPSHOT
         imagePullPolicy: ""
         name: eureka-server
         ports:
