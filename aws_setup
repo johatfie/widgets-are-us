@@ -21,3 +21,10 @@ docker   push  326608040956.dkr.ecr.us-east-2.amazonaws.com/widgets-are-us/gatew
 docker   push  326608040956.dkr.ecr.us-east-2.amazonaws.com/widgets-are-us/eureka-server:0.0.1-SNAPSHOT
 docker   push  326608040956.dkr.ecr.us-east-2.amazonaws.com/widgets-are-us/customers-service:0.0.1-SNAPSHOT
 
+
+kompose --file ../docker-compose-eks.yml convert
+
+kb apply -f config-server-service.yaml,config-server-deployment.yaml
+kb apply -f eureka-server-service.yaml,eureka-server-deployment.yaml
+kb apply -f gateway-server-service.yaml,gateway-server-deployment.yaml
+kb apply -f customers-service-service.yaml,customers-service-deployment.yaml
