@@ -6,7 +6,7 @@ everything myself.
 
 I've only been working on it for two weeks, but I've got most of the infrastructure running locally with docker-compose.
 I'm working on setting it up on Amazon EKS. I've got an ELK stack with Zipkin on an EC2 instance running.  I've got
-the four running services pushed to ECR, and I'm working on getting them on EKS.  Next up, I will set up a Jenkins machine
+the four running services pushed to ECR, and now running on my EKS instance.  Next up, I will set up a Jenkins machine
 on an EC2 instance and have full CI/CD.
 
 
