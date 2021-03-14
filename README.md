@@ -1,7 +1,7 @@
 # Widgets Are Us 
 ## A microservices demonstration project
 
-It includes these 7 projects, plus an ELK stack, Zipkin, and RabbitMQ.  I'm building it from scratch and handling
+It includes these 7 projects, plus an ELK stack, Zipkin, RabbitMQ, and Jenkins.  I'm building it from scratch and handling
 everything myself.  
 
 I've only been working on it for three weeks, but I've got most of the infrastructure running locally with docker-compose.
@@ -10,12 +10,16 @@ the four running services pushed to ECR, and now running on my EKS instance.  I 
 on an EC2 instance and now have full CI/CD for the 4 running services.
 
 
-- https://github.com/johatfie/widgets-are-us - Main repo with project set up Docker and Kubernetes files
+- https://github.com/johatfie/widgets-are-us - Main repo with project set up, Docker, and Kubernetes files
+  
+
 - https://github.com/johatfie/config-server - Configuration server running in EKS
 - https://github.com/johatfie/eureka-server - Eureka service discovery service running in EKS
 - https://github.com/johatfie/gateway-server - Spring Cloud Gateway server running in EKS
-- https://github.com/johatfie/microservices-properties - Configuration files served by config-server
 - https://github.com/johatfie/customers-service - Customer information microservice running in EKS
+
+  
+- https://github.com/johatfie/microservices-properties - Configuration files served by config-server
 - https://github.com/johatfie/hosts-file - Utility repo for easy switching between localhost, docker, and EKS via the hosts file
 
 
