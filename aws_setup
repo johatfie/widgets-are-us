@@ -3,7 +3,23 @@
 # docker tag widgets-are-us/authentication-service:0.0.1-SNAPSHOT [authentication-service-repositoryuri]:0.0.1-SNAPSHOT
 # docker tag widgets-are-us/organization-service:0.0.1-SNAPSHOT [organization-service-repositoryuri]:0.0.1-SNAPSHOT
 
+exit 1
 
+
+docker login -u AWS -p eyJwYXlsb2FkIjoiZ2xzSkNBa0tkVlZ2MzZvTERDdG01NmZHNDBiZ2p5blE5dE5QdW91TFlsditDMlo3bVU2Y3I1RUZNQWZzT2NPTzh3c0FQdi95WGVxWjJ3Yy9IT1VKZlB1MUpoNWo2dHJsWloyeTM5a0s3d1hGVjhGMnZlL29oaEIxNXZZelQrTUhOdzVWUkNxT0YraFNpM05xVitMYmJvZExRL3hXT1lGbldQMlgzNzIwZlpMWkh2ZkcrcHNaS0pHSXNMWWgvMjIrSnEraW9pemRmbTRGcjM3Y0NWckdlUEZOL1E0VUlhek9SNlFLellOL0ZNL0JhNzhONGJ2c1F1Ri9qNGVLVk94MG53RUdkaGx0cXIxUFRndlBCc0IyelRLRlZ5T044RFBnM2U5TGxuUVpxQW5hTWhvZ3VlSzZ2K3BqbEJjUjAyeHkxeVA3TkJOVzUwYWtyOU1KTStjb3ROR3cvanYrdExuYmVYaHRJUkdHaEE5dWhDRlUrUloyanU0TDNNOGh3bk1HTFFUSUEwd05yL05wSnlRZkhrRmZrbkZTZGhiOW9IY1dqUldYOGNOTlQwaW9IaUZORkNCRy9MSGgxcnhQRzR5NDZWQVcvd0RFOFlyR1lpUmF3dzlqN29QVTZkaXhuU3JVZ09nZ29pSmoxTkNRZ0pqTXNOU2wya295QXMrOVlKYnlScTNJTGZ1RnYwVmhOZEVZdTZLRkRNem9aVXc4RVh0RDdUYzNLOE8weFBKdXlHUTU1YS95a3lZc1ZoaGgvWHBBQU1SQVlBUkJST2I5K0c4OGYwY1V6dzVPdU9iVmlOcURFcWJoQW5ZRWNjNEVoZWV6SWVKdEQ0R2JyZFprQmlreXJvMG1wb2RGSm8xWFNwMVQ0VFp4clZYMlVBSkdEb1pzaFJ1bVBsS2RlWVkvK3o0VEtUcW1seEloTDd0NURRZDNrYXIyZllaTldBZ3ZVZUgrY0c4ZC9hcjJXOHlVd0x0MWY0TU1wM01ZN0F4M3dQOUJxaDBwU1BjT2lHZjBzYU1BalJORWVGNS9VTTY4b3RUREtVaTJmQlJuNmRIK3gyY1QzRGF2ZnVUY29sMVNsZXVLdEdNSE4zSnZ3WXNJSngweGh1UEh6dmJrREovelZjejBHclhucW05ejlNQWcyb0EvN1RmRjZaSlJ6SDNUTEN3MitnS3lqWXFDYUUzM2JYNE9zN0wvb1pJdlo0b2g3VWUwTDArYVN6R1ZPcUh3S2oxNjEyMm1jL0x5T2owSTZHNWpiRmwyZklwSkxDRmNESTVMeTcvZ0YyVVRDVGJNTUdjOExXaCs4RWI0Q3Zna29tcmJ0ck14ajlxeVhJK3JvMmhkY0hMZXY0Z2JYMmZHajNJSWpjeVFWdzIvZ1VYV1h5dzlZRUFWY3AyQUUvRklFa2tLRmVBSGJ3eUZwSG9LTXdIdENiL1I2NlpUSXJqSU9sWndpOFVya0RKeUdmY0U4NHg1SlZLRTJicXgyWEFNIiwiZGF0YWtleSI6IkFRRUJBSGpCNy9pZ3dNZzROUHdhdXJ4U0lZeDRIZm54dUdjLzQ4YkR3dndEcE5ZV1pnQUFBSDR3ZkFZSktvWklodmNOQVFjR29HOHdiUUlCQURCb0Jna3Foa2lHOXcwQkJ3RXdIZ1lKWUlaSUFXVURCQUV1TUJFRURIR2VadHpvWVBnTk91Mmt5UUlCRUlBN0RYQmk1MkZGY0lTd2JGdFovYjJMemE4SnRwd0FDNzhxT3FsTTJDb1gxc3Y5bmsrc1p1S2wrdStpek5wNFN4VE9iSXk2NGVKTjN0bzErSGc9IiwidmVyc2lvbiI6IjIiLCJ0eXBlIjoiREFUQV9LRVkiLCJleHBpcmF0aW9uIjoxNjE1MDYxODg4fQ== https://326608040956.dkr.ecr.us-east-2.amazonaws.com
+
+
+aws ecr create-repository --repository-name widgets-are-us/config-server
+aws ecr create-repository --repository-name widgets-are-us/gateway-server
+aws ecr create-repository --repository-name widgets-are-us/eureka-server
+aws ecr create-repository --repository-name widgets-are-us/customers-service
+
+aws ecr create-repository --repository-name widgets-are-us/authentication-service
+aws ecr create-repository --repository-name widgets-are-us/organization-service
+
+
+jenkins admin password:
+ccf8168c882b43c896cd5e194908458f
 
 
 sudo curl -L https://github.com/docker/compose/releases/download/1.28.5/docker-compose-`uname -s`-`uname -m` | sudo tee /usr/local/bin/docker-compose > /dev/null
@@ -28,3 +44,9 @@ kb apply -f config-server-service.yaml,config-server-deployment.yaml
 kb apply -f eureka-server-service.yaml,eureka-server-deployment.yaml
 kb apply -f gateway-server-service.yaml,gateway-server-deployment.yaml
 kb apply -f customers-service-service.yaml,customers-service-deployment.yaml
+kb apply -f rabbitmq-service.yaml,rabbitmq-deployment.yaml
+
+
+aws ec2 describe-security-groups --filters Name=group-name,Values="*eksctl-widgets-are-us-nodegroup*" --query "SecurityGroups[*].{Name:GroupName,ID:GroupId}"
+
+aws ec2 authorize-security-group-ingress --protocol tcp --port 31000 --group-id sg-025aa8aeb1605b86f --cidr 0.0.0.0/0
