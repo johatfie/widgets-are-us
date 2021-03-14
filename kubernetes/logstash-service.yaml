@@ -1,0 +1,35 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: C:\PROGRAMDATA\CHOCOLATEY\lib\kubernetes-kompose\tools\kompose.exe
+      convert
+    kompose.version: 1.21.0 (992df58d8)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: logstash
+  name: logstash
+spec:
+  ports:
+  - name: "5000"
+    port: 5000
+    targetPort: 5000
+    protocol: "TCP"
+    nodePort: 0
+  selector:
+    io.kompose.service: logstash
+status:
+  loadBalancer: {}
+
+---
+kind: "Endpoints"
+apiVersion: "v1"
+metadata:
+  name: "logstash"
+subsets:
+  - addresses:
+      - ip: "3.142.137.111"
+    ports:
+      - port: 5000
+

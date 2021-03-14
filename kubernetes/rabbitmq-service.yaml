@@ -3,20 +3,21 @@ kind: Service
 metadata:
   annotations:
     kompose.cmd: C:\PROGRAMDATA\CHOCOLATEY\lib\kubernetes-kompose\tools\kompose.exe
-      --file ../docker-compose-eks.yml convert
+      convert
     kompose.version: 1.21.0 (992df58d8)
   creationTimestamp: null
   labels:
-    io.kompose.service: config-server
-  name: config-server
+    io.kompose.service: rabbitmq
+  name: rabbitmq
 spec:
-  type: NodePort
   ports:
-  - name: "8071"
-    port: 8071
-    targetPort: 8071
-    nodePort: 31000
+  - name: "5672"
+    port: 5672
+    targetPort: 5672
+  - name: "15672"
+    port: 15672
+    targetPort: 15672
   selector:
-    io.kompose.service: config-server
+    io.kompose.service: rabbitmq
 status:
   loadBalancer: {}
