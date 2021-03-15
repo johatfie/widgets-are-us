@@ -12,10 +12,10 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - name: "8071"
-    port: 8071
-    targetPort: 8071
-    nodePort: 31000
+    - port: 8071
+      nodePort: 31071
+  #- name: "8071"
+    #targetPort: 8071
   selector:
     io.kompose.service: config-server
 status:

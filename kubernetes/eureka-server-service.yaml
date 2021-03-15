@@ -12,10 +12,10 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - name: "8070"
-    port: 8070
-    targetPort: 8070
-    nodePort: 31100
+    - port: 8070
+      nodePort: 31070
+  #- name: "8070"
+    #targetPort: 8070
   selector:
     io.kompose.service: eureka-server
 status:

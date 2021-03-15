@@ -12,7 +12,7 @@ metadata:
   name: logstash
 spec:
   ports:
-  - name: "5000"
+  - name: "logstash"
     port: 5000
     targetPort: 5000
     protocol: "TCP"
@@ -29,7 +29,7 @@ metadata:
   name: "logstash"
 subsets:
   - addresses:
-      - ip: "3.142.137.111"
+    - ip: "172.31.37.108"
     ports:
-      - port: 5000
-
+    - name: "logstash"
+      port: 5000
