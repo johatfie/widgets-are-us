@@ -29,7 +29,7 @@ metadata:
   name: "logstash"
 subsets:
   - addresses:
-    - ip: "172.31.37.108"
+    - ip: "3.142.137.111"
     ports:
     - name: "logstash"
       port: 5000
