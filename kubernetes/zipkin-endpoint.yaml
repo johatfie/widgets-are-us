@@ -1,0 +1,10 @@
+apiVersion: "v1"
+kind: "Endpoints"
+metadata:
+  name: "zipkin"
+subsets:
+  - addresses:
+    - ip: "3.142.137.111"
+    ports:
+    - name: "zipkin"
+      port: 9411
