@@ -22,6 +22,7 @@ from pushing the commit to Github to having it running on AWS.
 - https://github.com/johatfie/eureka-server - Eureka service discovery service running in EKS
 - https://github.com/johatfie/gateway-server - Spring Cloud Gateway server running in EKS
 - https://github.com/johatfie/customers-service - Customer information microservice running in EKS
+- https://github.com/johatfie/products-service - Product information microservice running in EKS
 
 
 - https://github.com/johatfie/microservices-properties - Configuration files served by config-server
