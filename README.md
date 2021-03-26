@@ -1,7 +1,7 @@
 # Widgets Are Us
 ## A microservices demonstration project
 
-It includes these 7 projects so far, plus an Elasticsearch, Logstash, and Kibana (ELK) stack, Zipkin, RabbitMQ, and
+It includes these 8 projects so far, plus an Elasticsearch, Logstash, and Kibana (ELK) stack, Zipkin, RabbitMQ, and
 Jenkins.  I'm building it from scratch and handling all the configuration myself.
 
 This project is little more than three weeks old now, but I think I have my infrastructure set up on AWS just the way I
@@ -9,7 +9,7 @@ want it.  I started setting it up and running it locally with docker-compose, bu
 running it on AWS exclusively.  I've got a Jenkins build machine running on an EC2 instance with full CI/CD.  I need
 only push a commit to my Github repo to get it built, tested, containerized, pushed, and deployed to Kubernetes running on EKS.
 
-I have a Github webhook in each repo for the four running services.  They trigger Jenkins to kick off a build.  It pulls
+I have a Github webhook in each repo for the five running services.  They trigger Jenkins to kick off a build.  It pulls
 the latest code.  Jenkins then compiles the code, runs all the tests, builds a docker image, pushes that image to my AWS Elastic
 Container Repository, and gives Kubernetes the command to pull and run the new image.  It takes a little over a minute
 from pushing the commit to Github to having it running on AWS.
