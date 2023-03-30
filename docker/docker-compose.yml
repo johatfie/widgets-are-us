@@ -2,7 +2,8 @@ version: "3.7"
 
 services:
   config-server:
-    image: micro/config-server:0.0.1-SNAPSHOT
+    #image: config-server:0.0.1-SNAPSHOT
+    image: config-server:latest
     ports:
       - "8071:8071"
     environment:
@@ -13,7 +14,8 @@ services:
           - "config-server"
 
   eureka-server:
-    image: micro/eureka-server:0.0.1-SNAPSHOT
+    #image: eureka-server:0.0.1-SNAPSHOT
+    image: eureka-server:latest
     depends_on:
       - config-server
     ports:
@@ -26,7 +28,8 @@ services:
           - "eureka-server"
 
   gateway-server:
-    image: micro/gateway-server:0.0.1-SNAPSHOT
+    #image: gateway-server:0.0.1-SNAPSHOT
+    image: gateway-server:latest
     depends_on:
       - eureka-server
     ports:
@@ -39,7 +42,8 @@ services:
           - "gateway-server"
 
   customers-service:
-    image: micro/customers-service:0.0.1-SNAPSHOT
+    #image: customers-service:0.0.2-SNAPSHOT
+    image: customers-service:latest
     #depends_on:
       #- gateway-server
     ports:
@@ -181,8 +185,10 @@ services:
     image: docker.elastic.co/logstash/logstash:7.7.0
     container_name: logstash
     command: logstash -f /etc/logstash/conf.d/logstash.conf
+    depends_on:
+      - elasticsearch
     volumes:
-      - ./config:/etc/logstash/conf.d
+      - ./config/logstash.conf:/etc/logstash/conf.d/logstash.conf:ro
     ports:
       - "5000:5000"
     networks:
