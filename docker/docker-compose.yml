@@ -8,6 +8,8 @@ services:
       - "8071:8071"
     environment:
       - "SPRING_PROFILES_ACTIVE=dev"
+    depends_on:
+      - kibana
     networks:
       backend:
         aliases:
@@ -44,8 +46,8 @@ services:
   customers-service:
     #image: customers-service:0.0.2-SNAPSHOT
     image: customers-service:latest
-    #depends_on:
-      #- gateway-server
+    depends_on:
+      - gateway-server
     ports:
       - "8073:8073"
     environment:
@@ -59,7 +61,8 @@ services:
     image: openzipkin/zipkin
     container_name: zipkin
     depends_on:
-      - elasticsearch
+      #- elasticsearch
+      - kibana
     environment:
       - STORAGE_TYPE=elasticsearch
       - "ES_HOSTS=elasticsearch:9300"
@@ -164,6 +167,8 @@ services:
     ports:
       - 9300:9300
       - 9200:9200
+    depends_on:
+      - logstash
     networks:
       backend:
         aliases:
@@ -172,6 +177,8 @@ services:
   kibana:
     image: docker.elastic.co/kibana/kibana:7.7.0
     container_name: kibana
+    depends_on:
+      - elasticsearch
     environment:
       ELASTICSEARCH_URL: "http://elasticsearch:9300"
     ports:
@@ -185,8 +192,8 @@ services:
     image: docker.elastic.co/logstash/logstash:7.7.0
     container_name: logstash
     command: logstash -f /etc/logstash/conf.d/logstash.conf
-    depends_on:
-      - elasticsearch
+    #depends_on:
+      #- elasticsearch
     volumes:
       - ./config/logstash.conf:/etc/logstash/conf.d/logstash.conf:ro
     ports:
