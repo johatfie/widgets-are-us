@@ -10,6 +10,7 @@ services:
       - "SPRING_PROFILES_ACTIVE=dev"
     depends_on:
       - kibana
+      - logstash
     networks:
       backend:
         aliases:
@@ -47,7 +48,8 @@ services:
     #image: customers-service:0.0.2-SNAPSHOT
     image: customers-service:latest
     depends_on:
-      - gateway-server
+      gateway-server:
+        condition: service_healthy
     ports:
       - "8073:8073"
     environment:
@@ -167,8 +169,8 @@ services:
     ports:
       - 9300:9300
       - 9200:9200
-    depends_on:
-      - logstash
+    #depends_on:
+      #- logstash
     networks:
       backend:
         aliases:
@@ -178,7 +180,9 @@ services:
     image: docker.elastic.co/kibana/kibana:7.7.0
     container_name: kibana
     depends_on:
-      - elasticsearch
+      - logstash
+    #depends_on:
+      #- elasticsearch
     environment:
       ELASTICSEARCH_URL: "http://elasticsearch:9300"
     ports:
@@ -192,8 +196,8 @@ services:
     image: docker.elastic.co/logstash/logstash:7.7.0
     container_name: logstash
     command: logstash -f /etc/logstash/conf.d/logstash.conf
-    #depends_on:
-      #- elasticsearch
+    depends_on:
+      - elasticsearch
     volumes:
       - ./config/logstash.conf:/etc/logstash/conf.d/logstash.conf:ro
     ports:
